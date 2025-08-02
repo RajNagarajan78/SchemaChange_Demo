@@ -32,15 +32,14 @@ jobs:
           SF_ROLE: ${{ secrets.SF_ROLE }}
           SF_WAREHOUSE: ${{ secrets.SF_WAREHOUSE }}
           SF_DATABASE: ${{ secrets.SF_DATABASE }}
-          SNOWFLAKE_PASSWORD: ${{ secrets.SF_PASSWORD }}
-          SF_DISABLE_OCSP_CHECK: ${{ secrets.SF_DISABLE_OCSP_CHECK}}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SF_PASSWORD }}         
           
         run: |
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
           python --version
           echo "Step 1: Upgrading Snowflake Python Connector"
           pip install --upgrade snowflake-connector-python
-          echo "Step 1: Installing schemachange"          
+          echo "Step 2: Installing schemachange"          
           pip install schemachange          
           
           
